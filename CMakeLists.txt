@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 4.0.1)
 
 # Set the project name and version
-project(VoxelCraft VERSION 0.0.1 LANGUAGES CXX)
+project(SpeedCraft VERSION 0.0.1 LANGUAGES CXX)
 
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
@@ -18,7 +18,7 @@ endif()
 
 # Compile the source files
 add_executable(
-    VoxelCraft 
+    SpeedCraft 
     src/main.cpp
     src/camera.cpp
     src/crosshair.cpp
@@ -28,11 +28,11 @@ add_executable(
 )
 # Add include directories for raylib
 target_include_directories(
-    VoxelCraft PRIVATE
+    SpeedCraft PRIVATE
     ${CMAKE_SOURCE_DIR}/src/include
 )
 # Add Release and debug compile flags
-target_compile_options(VoxelCraft PRIVATE
+target_compile_options(SpeedCraft PRIVATE
     # Release build flags
     $<$<CONFIG:RELEASE>:
         -O3
@@ -58,7 +58,7 @@ set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -flto")
 
 # Link the raylib library
 target_link_libraries(
-    VoxelCraft
+    SpeedCraft
     PRIVATE
     raylib
 )
